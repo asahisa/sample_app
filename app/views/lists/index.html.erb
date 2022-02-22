@@ -3,7 +3,9 @@
 <% @lists.each do |list| %>
 
   <p>タイトル</p>
-  <!-- 変数.カラム名 -->
-  <span><%= list.title %></span>
+  <span>
+    <!--< %= link_to 表示させるテキスト, リンク先URL [,オプション] %>-->
+    <%= link_to list.title, list_path(list.id) %>
+  </span>
   
 <% end %>
