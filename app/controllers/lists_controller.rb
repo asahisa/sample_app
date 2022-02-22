@@ -17,13 +17,25 @@ class ListsController < ApplicationController
   end
 
   def show
+    #投稿を１件取得( ID )
     @list = List.find(params[:id])
   end
 
   def edit
+    #投稿を１件取得( ID )
+    @list = List.find(params[:id])
   end
-  
-  # 以下全てローカル変数化
+
+  def update
+    #投稿を１件取得( ID )
+    list = List.find(params[:id])
+    #投稿の更新
+    list.update(list_params)
+    # 詳細画面へリダイレクト
+    redirect_to list_path(list.id)
+  end
+
+  # 以下全てローカル変数
   private
   # 引数の呼び出し
   def list_params

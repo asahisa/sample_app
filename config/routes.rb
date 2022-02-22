@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "lists" => "lists#index"
   #コメントIDの取得,  'lists#show' アクションを "list" としても扱う
   get "lists/:id" => "lists#show", as: "list"
-  #エディット
-  get "/edit" => "lists#edit"
+  #コメントの編集, "lists#edit"  アクションを "edit_list" としても扱う
+  get "lists/:id/edit" => "lists#edit", as: "edit_list"
+  #編集したコメントの更新
+  patch "lists/:id" => "lists#update", as: "update_list"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
