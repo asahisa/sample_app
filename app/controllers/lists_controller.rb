@@ -8,7 +8,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       # 詳細画面へリダイレクト
-      redirect_to list_path(list.id)
+      redirect_to list_path(@list.id)
     else
       # 同一コントローラ内、newアクション実行
       render :new
