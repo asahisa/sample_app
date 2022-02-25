@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   patch "lists/:id" => "lists#update", as: "update_list"
   # #投稿の削除
   delete "lists/:id" => "lists#destroy", as: "destroy_list"
+  
 end

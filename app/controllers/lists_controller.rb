@@ -5,11 +5,14 @@ class ListsController < ApplicationController
   
   def create
     # データの受け取り モデル名(引数)
-    list = List.new(list_params)
-    # セーブ
-    list.save
-    # 詳細画面へリダイレクト
-    redirect_to list_path(list.id)
+    @list = List.new(list_params)
+    if @list.save
+      # 詳細画面へリダイレクト
+      redirect_to list_path(list.id)
+    else
+      # 同一コントローラ内、newアクション実行
+      render :new
+    end
   end
   
   def index
