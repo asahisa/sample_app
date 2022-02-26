@@ -4,7 +4,12 @@
   <div class="list-box">
     <!-- イメージ画像の有無 -->
     <% if list.image.attached? %>
+<<<<<<< HEAD
      
+=======
+     <!--< %= image_tag list.image, size: "200x200" %>-->
+    
+>>>>>>> 6ec88636009657091fda409980a08d622a856764
       <%= link_to image_tag(list.image, size: "200x200"), list_path(list.id) %>
     <% else %>
       <%= link_to image_tag("no_image", size: "200x200"), list_path(list.id) %>
